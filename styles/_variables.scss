@@ -1,0 +1,14 @@
+
+// ========== VARIABLES ========== *//
+$red: red;
+$pink: pink;
+$yellow: yellow;
+$green: green;
+$small: 650px;
+
+//* ========== MIXINS ========== *//
+@mixin mq($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}

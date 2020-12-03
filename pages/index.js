@@ -1,16 +1,39 @@
-import Head from 'next/head'
+import Head from 'next/head';
+import _JSXStyle from "styled-jsx/style";
 
 export default function Home() {
   return (
     <div className="container">
+      <style jsx>{`
+        @import '../styles/variables.scss';
+
+        .title {
+            &.red {
+                color: darken($red, 20%);
+
+                @include mq($small) {
+                    font-size: 100px;
+                    color: $green;
+                }
+            }
+        }
+
+        .card {
+          background-color: $yellow;
+
+          @include mq($small) {
+            background-color: $pink;
+          }
+        }
+      `}</style>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
-        <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+        <h1 className="title red">
+          LEARNING IS COOL
         </h1>
 
         <p className="description">
