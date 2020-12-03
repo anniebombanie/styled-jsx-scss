@@ -1,7 +1,11 @@
 
 @import 'variables.scss';
-/* NOTE */
 
+/* NOTES
+* :global works within locally scoped scss
+* Add `@import 'variables.scss';` within <style jsx>{``}</style> for local styling
+*
+*/
 
 .title {
     &.red {

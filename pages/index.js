@@ -1,6 +1,8 @@
 import Head from 'next/head';
-import cardStyles from './_card.scss'
+import cardStyles from './card.scss'
+
 // import cardStyles from './_card.scss?type=global';
+// ^ In next.config.js, scoped is default but adding ?type=global as above makes it global
 
 export default function Home() {
   return (
