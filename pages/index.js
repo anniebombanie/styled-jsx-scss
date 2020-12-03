@@ -1,31 +1,10 @@
 import Head from 'next/head';
-import _JSXStyle from "styled-jsx/style";
+import cardStyles from './_card.scss'
+// import cardStyles from './_card.scss?type=global';
 
 export default function Home() {
   return (
     <div className="container">
-      <style jsx>{`
-        @import '../styles/variables.scss';
-
-        .title {
-            &.red {
-                color: darken($red, 20%);
-
-                @include mq($small) {
-                    font-size: 100px;
-                    color: $green;
-                }
-            }
-        }
-
-        .card {
-          background-color: $yellow;
-
-          @include mq($small) {
-            background-color: $pink;
-          }
-        }
-      `}</style>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
@@ -212,6 +191,8 @@ export default function Home() {
           }
         }
       `}</style>
+      
+      <style jsx>{cardStyles}</style>
 
       <style jsx global>{`
         html,

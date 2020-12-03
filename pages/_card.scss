@@ -1,0 +1,28 @@
+
+@import 'variables.scss';
+/* NOTE */
+
+
+.title {
+    &.red {
+        color: darken($red, 20%);
+
+        @include mq($small) {
+            font-size: 100px;
+            color: $green;
+        }
+    }
+}
+
+.card {
+    background-color: $yellow;
+    transition: color 0.3s ease-in-out;
+
+    @include mq($small) {
+        background-color: $pink;
+    }
+}
+
+:global(.container) {
+    background-color: lightgrey;
+}
