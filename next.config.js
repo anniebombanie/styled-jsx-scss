@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
     webpack: (config, { defaultLoaders }) => {
       config.module.rules.push({
@@ -8,6 +10,14 @@ module.exports = {
             loader: require('styled-jsx/webpack').loader,
             options: {
               type: (fileName, options) => options.query.type || 'scoped'
+            }
+          },
+          { 
+            loader: 'sass-loader',
+            options: {
+              sassOptions: {
+                includePaths: [path.resolve(__dirname, './styles')]
+              }
             }
           }
         ]

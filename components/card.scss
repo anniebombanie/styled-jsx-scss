@@ -1,0 +1,62 @@
+
+@import 'variables';
+
+/* NOTES
+* :global works within locally scoped scss
+* Add `@import 'variables.scss';` within <style jsx>{``}</style> for local styling
+*
+*/
+
+.card {
+    margin: 1rem;
+    flex-basis: 45%;
+    padding: 1.5rem;
+    text-align: left;
+    color: $red;
+    text-decoration: none;
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .card:hover,
+  .card:focus,
+  .card:active {
+    color: #0070f3;
+    border-color: #0070f3;
+  }
+
+  .card h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.5rem;
+  }
+
+  .card p {
+    margin: 0;
+    font-size: 1.25rem;
+    line-height: 1.5;
+  }
+
+.title {
+    &.red {
+        color: darken($red, 20%);
+
+        @include mq($small) {
+            font-size: 100px;
+            color: $green;
+        }
+    }
+}
+
+.card {
+    background-color: $yellow;
+    transition: color 0.3s ease-in-out;
+
+    @include mq($small) {
+        background-color: $pink;
+    }
+}
+
+:global(.container) {
+    background-color: lightgrey;
+}
